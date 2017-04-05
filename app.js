@@ -72,8 +72,10 @@ var testData = [
 	var objectA = {
   id: 2,
   name: 'Jane Doe',
+  city: 'Chicago',
   age: 34,
-  city: 'Chicago'
+
+ 
 }
 
 // running the function with `objectA` and `expectedKeys`
@@ -93,13 +95,47 @@ var expectedKeys = [
 
 function validateKeys(object, expectedKeys) {
  // your code here
-return expectedKeys.every(k => object[k] !== undefined);
 
-return expectedKeys.every(function(el, ind){
-	return el === Object.keys(object)[ind];
-})
+if (Object.keys(object).length !== expectedKeys.length) {
+    return false;
+  }
+  return expectedKeys.every(k => object[k] !== undefined);
+
+	// var sortArr = expectedKeys.sort();
+	// var sortArr2 = Object.keys(object).sort();
+	// console.log(sortArr);
+	// console.log(sortArr2);
+
+
+	// return sortArr.every(function(el, ind){
+		
+	// return el === sortArr2[ind];
+	// })
 
 }
 
 console.log("A: " + validateKeys(objectA,expectedKeys));
 console.log("B: " + validateKeys(objectB,expectedKeys));
+
+
+function makeToDos(owner, toDos) {
+   // your code here
+   return {
+   	owner: owner,
+   	toDos: toDos,
+   	generateHtml: function() {
+
+   		this.toDos.forEach(function(todo){
+   			let html = '<li>' + todo + '</li>';
+   			document.getElementById('main-list').insertAdjacentHTML('beforeend', html);
+   		});
+   		
+   	}
+   }
+}
+
+
+
+var toDos = ['get milk', 'walk dog', 'pay bills', 'eat dinner'];
+var owner = 'Steve';
+var myToDos = makeToDos(owner, toDos);
