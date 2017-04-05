@@ -37,3 +37,19 @@ function keyDeleter(obj){
 	delete(obj.foo);
 	delete(obj.bar);
 }
+
+
+//-------------------------------------------------------------------------------
+
+function makeStudentsReport(data) {
+	return data.map(function(d){
+		return `${d.name}: ${d.grade}`
+
+	});
+}
+
+var testData = [
+    {name: 'Jane Doe', grade: 'A'},
+    {name: 'John Dough', grade: 'B'},
+    {name: 'Jill Do', grade: 'A'}
+  ];
