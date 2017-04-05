@@ -33,12 +33,15 @@ console.log("Meal: " + mealObj.meals[3]);
 
 
 
-var myArray = [{name: "Donald", job_title:"Unemployed"},
-{name: "Zach", job_title:"Chef"},
+var myArray = [{name: "Donald", job_title:"Unemployed", boss: "Rich"},
+{name: "Zach", job_title:"Chef", boss: "Rich"},
 {name: "Rich", job_title:"Teacher"},];
 
 myArray.forEach(function(value) {
-	console.log(`${value.name}: ${value.job_title}`);
+  if(value.hasOwnProperty("boss")){
+  console.log(`${value.job_title}: ${value.name} reports to ${value.boss}!`);
+}else{
+  console.log(`${value.job_title}: ${value.name} is the boss`);
+}
+
 });
-
-
