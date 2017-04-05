@@ -53,3 +53,15 @@ var testData = [
     {name: 'John Dough', grade: 'B'},
     {name: 'Jill Do', grade: 'A'}
   ];
+
+
+
+ function findById(items, idNum) {
+ 	return items.find(item => item.id === idNum)
+ }
+
+ var testData = [
+    {id: 1, foo: 'bar'},
+    {id: 2, foo: 'bizz'},
+    {id: 3, bang: 'boo'}
+  ];
