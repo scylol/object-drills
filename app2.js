@@ -22,8 +22,23 @@ for(d in myObject) {
 	console.log(myObject[d]);
 }
 
+
+
 const mealObj = {
   meals: ['breakfast', 'second breakfast', 'elevenses', 'lunch', 'afternoon tea', 'dinner', 'supper']
 };
 
 console.log("Meal: " + mealObj.meals[3]);
+
+
+
+
+var myArray = [{name: "Donald", job_title:"Unemployed"},
+{name: "Zach", job_title:"Chef"},
+{name: "Rich", job_title:"Teacher"},];
+
+myArray.forEach(function(value) {
+	console.log(`${value.name}: ${value.job_title}`);
+});
+
+
