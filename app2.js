@@ -18,7 +18,12 @@ const myObject = {
 	spam: "5"
 }
 
-
 for(d in myObject) {
 	console.log(myObject[d]);
 }
+
+const mealObj = {
+  meals: ['breakfast', 'second breakfast', 'elevenses', 'lunch', 'afternoon tea', 'dinner', 'supper']
+};
+
+console.log("Meal: " + mealObj.meals[3]);
