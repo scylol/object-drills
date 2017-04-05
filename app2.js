@@ -45,3 +45,48 @@ myArray.forEach(function(value) {
 }
 
 });
+
+
+
+function decode(string) {
+	let result = '';
+	const decoder = {
+	"a": 2,
+	"b": 3,
+	"c": 4,
+	"d": 5
+	}
+
+var wordArray = string.split(" ");
+
+	for(i=0; i<wordArray.length;i++) {
+
+		if(wordArray[i][0] === 'a') {
+		result += wordArray[i][decoder.a-1];
+		}
+		else if(wordArray[i][0] === 'b') {
+		result += wordArray[i][decoder.b-1];
+		}
+		else if(wordArray[i][0] === 'c') {
+		result += wordArray[i][decoder.c-1];
+		}
+		else if(wordArray[i][0] === 'd') {
+		result += wordArray[i][decoder.d-1];
+		}
+		else {
+		result += " ";
+		}
+
+		
+	}
+		return result;
+}
+
+var test = decode('craft block argon meter bells brown croon droop');
+
+console.log(test);
+
+
+
+
+
