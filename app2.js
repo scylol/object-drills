@@ -77,7 +77,7 @@ var wordArray = string.split(" ");
 		result += " ";
 		}
 
-		
+
 	}
 		return result;
 }
@@ -86,7 +86,27 @@ var test = decode('craft block argon meter bells brown croon droop');
 
 console.log(test);
 
+function createCharacter(name,nick,race,origin,attack,defense){
 
+  return {
+    name,nick,race,origin,attack,defense,
+    describe: function(){
+      return `${this.name} is a ${this.race} from ${this.origin}.`
+    },
+    evaluateFight: function(character){
+      var damageGiven = (this.attack - character.defense);
+      damageGiven < 0 ? damageGiven=0 : damageGiven= damageGiven;
+      var damageTaken = (character.attack - this.defense);
+      damageTaken < 0 ? damageTaken=0 : damageTaken= damageTaken;
 
+      return `Your opponent takes ${damageGiven} damage and you receive ${damageTaken} damage`;
+    }
+  }
+}
 
-
+var characters = [createCharacter("Gandalf the White","gandalf","Wizard","Middle Earth", 10, 6),
+                  createCharacter("Bilbo Baggins", "bilbo", "Hobbit","The Shire", 2, 1),
+                  createCharacter("Frodo Baggins", "frodo", "Hobbit", "The Shire", 3, 2),
+                  createCharacter("Aragorn son of Arathorn", "aragorn", "Man", "Dunnedain", 6, 8),
+                  createCharacter()
+                ]
