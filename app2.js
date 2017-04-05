@@ -104,9 +104,24 @@ function createCharacter(name,nick,race,origin,attack,defense){
   }
 }
 
-var characters = [createCharacter("Gandalf the White","gandalf","Wizard","Middle Earth", 10, 6),
+const characters = [createCharacter("Gandalf the White","gandalf","Wizard","Middle Earth", 10, 6),
                   createCharacter("Bilbo Baggins", "bilbo", "Hobbit","The Shire", 2, 1),
                   createCharacter("Frodo Baggins", "frodo", "Hobbit", "The Shire", 3, 2),
                   createCharacter("Aragorn son of Arathorn", "aragorn", "Man", "Dunnedain", 6, 8),
-                  createCharacter()
+                  createCharacter("Legolas","legolas","Elf","Woodland Realm",8,5)
                 ]
+characters.push(createCharacter("Arwen Undomiel", "hey you", "half-elf","Rivendell",1,2));
+
+const ara = characters.find(function(el){
+  return el.nick==="aragorn";
+})
+
+console.log(ara.describe());
+
+const hobbit = characters.filter(function(el){
+  return el.race==='Hobbit';
+})
+
+const heavyHitters = characters.filter(function(el){
+  return el.attack>5;
+});
