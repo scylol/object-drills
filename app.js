@@ -65,3 +65,41 @@ var testData = [
     {id: 2, foo: 'bizz'},
     {id: 3, bang: 'boo'}
   ];
+
+
+	//VALIDATE KEYS DRILL
+
+	var objectA = {
+  id: 2,
+  name: 'Jane Doe',
+  age: 34,
+  city: 'Chicago'
+}
+
+// running the function with `objectA` and `expectedKeys`
+// should return `false`
+var objectB = {
+  id: 3,
+  age: 33,
+  city: 'Peoria'
+}
+
+var expectedKeys = [
+  'id', 'name', 'age', 'city'
+];
+
+
+
+
+function validateKeys(object, expectedKeys) {
+ // your code here
+return expectedKeys.every(k => object[k] !== undefined);
+
+return expectedKeys.every(function(el, ind){
+	return el === Object.keys(object)[ind];
+})
+
+}
+
+console.log("A: " + validateKeys(objectA,expectedKeys));
+console.log("B: " + validateKeys(objectB,expectedKeys));
