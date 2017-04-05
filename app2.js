@@ -86,12 +86,12 @@ var test = decode('craft block argon meter bells brown croon droop');
 
 console.log(test);
 
-function createCharacter(name,nick,race,origin,attack,defense){
+function createCharacter(name,nick,race,origin,attack,defense,weapon){
 
   return {
-    name,nick,race,origin,attack,defense,
+    name,nick,race,origin,attack,defense,weapon,
     describe: function(){
-      return `${this.name} is a ${this.race} from ${this.origin}.`
+      return `${this.name} is a ${this.race} from ${this.origin} and yields the ${this.weapon}.`
     },
     evaluateFight: function(character){
       var damageGiven = (this.attack - character.defense);
@@ -104,13 +104,13 @@ function createCharacter(name,nick,race,origin,attack,defense){
   }
 }
 
-const characters = [createCharacter("Gandalf the White","gandalf","Wizard","Middle Earth", 10, 6),
-                  createCharacter("Bilbo Baggins", "bilbo", "Hobbit","The Shire", 2, 1),
-                  createCharacter("Frodo Baggins", "frodo", "Hobbit", "The Shire", 3, 2),
-                  createCharacter("Aragorn son of Arathorn", "aragorn", "Man", "Dunnedain", 6, 8),
-                  createCharacter("Legolas","legolas","Elf","Woodland Realm",8,5)
+const characters = [createCharacter("Gandalf the White","gandalf","Wizard","Middle Earth", 10, 6,'wizard staff'),
+                  createCharacter("Bilbo Baggins", "bilbo", "Hobbit","The Shire", 2, 1, 'Ring'),
+                  createCharacter("Frodo Baggins", "frodo", "Hobbit", "The Shire", 3, 2, 'String and Barrow Blade'),
+                  createCharacter("Aragorn son of Arathorn", "aragorn", "Man", "Dunnedain", 6, 8, 'Anduril'),
+                  createCharacter("Legolas","legolas","Elf","Woodland Realm",8,5,'Bow and Arrow')
                 ]
-characters.push(createCharacter("Arwen Undomiel", "hey you", "half-elf","Rivendell",1,2));
+characters.push(createCharacter("Arwen Undomiel", "hey you", "half-elf","Rivendell",1,2,'Hadhafang'));
 
 const ara = characters.find(function(el){
   return el.nick==="aragorn";
