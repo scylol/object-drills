@@ -38,7 +38,7 @@ var myArray = [{name: "Donald", job_title:"Unemployed", boss: "Rich"},
 {name: "Rich", job_title:"Teacher"},];
 
 myArray.forEach(function(value) {
-  if(value.hasOwnProperty("boss")){
+  if(value.hasOwnProperty("boss")&&value.boss != undefined){
   console.log(`${value.job_title}: ${value.name} reports to ${value.boss}!`);
 }else{
   console.log(`${value.job_title}: ${value.name} is the boss`);
